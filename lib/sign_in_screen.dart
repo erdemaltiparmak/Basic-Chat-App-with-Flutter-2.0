@@ -1,3 +1,5 @@
+import 'package:chat_basic/login_buttons.dart';
+import 'package:chat_basic/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,7 +17,6 @@ class SignInScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage("assets/images/people.png"),alignment: Alignment.bottomCenter,
-
                   ),
                 ),
               ),
@@ -25,32 +26,33 @@ class SignInScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  SizedBox(height: 100,),
-
-                  Text(
-                    "Hadi Başlayalım!",
-                    style: TextStyle(
-                        color: Color.fromRGBO(9, 85, 9, 1.0),
-                        fontSize: 34,
-                        fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
+                    Spacer(flex:1),
+                    Text(
+                      "Hadi Başlayalım!",
+                      style: TextStyle(
+                          color: Color.fromRGBO(9, 85, 9, 1.0),
+                          fontSize: 34,
+                          fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                    ),
+                  Spacer(flex:6),
+                    LoginButton(
+                    text: "Giriş Yap",
+                      textColor: Colors.white,
+                      onPressed: (){},
+                      buttonColor: Colors.red,
+                      ),
+                    SizedBox(height: setHeight(context, 10),),
+                  LoginButton(
+                    text: "Kayıt Ol",
+                    textColor: Colors.white,
+                    onPressed: (){},
+                    buttonColor: Colors.red,
                   ),
-                  SizedBox(height: 90,),
-                  CupertinoButton(
-                    onPressed: () {},
-                    color: Colors.red,
-                    child: Text("Giriş Yap",style: TextStyle(color: Colors.white),),
-                  ),
-                  SizedBox(height: 5,),
-
-                  CupertinoButton(
-                    onPressed: () {},
-                    color: Colors.red,
-                    child: Text("Kayıt Ol",style: TextStyle(color: Colors.white),),
-                  ),
 
 
-                  SizedBox(height: 165,),
+
+                  Spacer(flex:5),
 
                 ],
               ))
